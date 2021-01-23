@@ -1,15 +1,15 @@
 import React, {FC} from 'react';
 import {ScrollView} from 'react-native-gesture-handler';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import Card from '../components/card';
+import Layout from '../components/shared/layout';
 
 const MyCards: FC = () => {
   return (
-    <SafeAreaView>
+    <Layout>
       <ScrollView>
         <Card />
       </ScrollView>
-    </SafeAreaView>
+    </Layout>
   );
 };
 
