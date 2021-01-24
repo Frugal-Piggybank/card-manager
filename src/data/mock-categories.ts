@@ -4,7 +4,7 @@ const Categories: Category[] = [
   {
     id: 1,
     name: 'Grocery',
-    cards: [1],
+    cards: [1, 2],
     percent: 5,
   },
   {
@@ -17,12 +17,6 @@ const Categories: Category[] = [
     id: 3,
     name: 'CVS',
     cards: [1],
-    percent: 5,
-  },
-  {
-    id: 4,
-    name: 'Grocery',
-    cards: [2],
     percent: 5,
   },
   {

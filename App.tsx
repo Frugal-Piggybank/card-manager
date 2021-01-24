@@ -4,7 +4,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from './src/components/shared/icon';
 import MyCardsScreen from './src/screens/my-cards';
 import SearchScreen from './src/screens/search';
-import CategoriesScreen from './src/screens/categories';
+import CategoriesStackScreen from './src/screens/categories';
+import Screens from './src/screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +18,7 @@ const App = () => {
           inactiveTintColor: 'gray',
         }}>
         <Tab.Screen
-          name="MyCards"
+          name={`${Screens.MyCards}`}
           component={MyCardsScreen}
           options={{
             title: 'My Cards',
@@ -28,8 +29,8 @@ const App = () => {
         />
 
         <Tab.Screen
-          name="Categories"
-          component={CategoriesScreen}
+          name={`${Screens.Categories}`}
+          component={CategoriesStackScreen}
           options={{
             title: 'Categories',
             tabBarIcon: ({focused, color, size}) => (
@@ -38,7 +39,7 @@ const App = () => {
           }}
         />
         <Tab.Screen
-          name="Search"
+          name={`${Screens.Search}`}
           component={SearchScreen}
           options={{
             title: 'Search',
