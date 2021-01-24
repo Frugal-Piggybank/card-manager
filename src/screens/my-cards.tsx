@@ -3,7 +3,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Card from '../components/card';
 import Layout from '../components/shared/layout';
 
-const MyCards: FC = () => {
+const MyCardsScreen: FC = () => {
   return (
     <Layout>
       <ScrollView>
@@ -13,4 +13,4 @@ const MyCards: FC = () => {
   );
 };
 
-export default MyCards;
+export default MyCardsScreen;

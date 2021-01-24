@@ -2,8 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from './src/components/shared/icon';
-import MyCards from './src/screens/my-cards';
-import Search from './src/screens/search';
+import MyCardsScreen from './src/screens/my-cards';
+import SearchScreen from './src/screens/search';
+import CategoriesScreen from './src/screens/categories';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +18,7 @@ const App = () => {
         }}>
         <Tab.Screen
           name="MyCards"
-          component={MyCards}
+          component={MyCardsScreen}
           options={{
             title: 'My Cards',
             tabBarIcon: ({focused, color, size}) => (
@@ -25,9 +26,20 @@ const App = () => {
             ),
           }}
         />
+
+        <Tab.Screen
+          name="Categories"
+          component={CategoriesScreen}
+          options={{
+            title: 'Categories',
+            tabBarIcon: ({focused, color, size}) => (
+              <Icon name="list" size={size} color={color} />
+            ),
+          }}
+        />
         <Tab.Screen
           name="Search"
-          component={Search}
+          component={SearchScreen}
           options={{
             title: 'Search',
             tabBarIcon: ({focused, color, size}) => (

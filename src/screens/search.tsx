@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Text} from 'react-native';
 import Layout from '../components/shared/layout';
 
-const Search: FC = () => {
+const SearchScreen: FC = () => {
   return (
     <Layout>
       <Text>Search for card categories here</Text>
@@ -10,4 +10,4 @@ const Search: FC = () => {
   );
 };
 
-export default Search;
+export default SearchScreen;
