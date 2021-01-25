@@ -5,10 +5,10 @@ export interface Card {
 }
 
 export enum Issuer {
-  Visa,
-  Mastercard,
-  Citibank,
-  Chase,
-  BOA,
-  Discover,
+  Visa = 'Visa',
+  Mastercard = 'Mastercard',
+  Citibank = 'Citi',
+  Chase = 'Chase',
+  BOA = 'Bank of America',
+  Discover = 'Discover',
 }

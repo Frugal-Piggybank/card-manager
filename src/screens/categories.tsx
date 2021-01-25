@@ -20,20 +20,30 @@ const CategoriesStackScreen: FC = () => {
       <CategoriesStack.Screen
         name={`${Screens.Category}`}
         component={CategoryScreen}
+        options={({route}) => ({
+          title: route.params?.title,
+        })}
       />
     </CategoriesStack.Navigator>
   );
 };
 
 const CategoriesScreen: FC<{navigation: any}> = ({navigation: {navigate}}) => {
-  const renderCategory = ({item: category}: any) => (
-    <TouchableOpacity
-      onPress={() => navigate(`${Screens.Category}`, {id: category.id})}>
-      <View>
-        <Text>{category.name || 'Test'}</Text>
-      </View>
-    </TouchableOpacity>
-  );
+  const renderCategory = ({item: category}: any) => {
+    return (
+      <TouchableOpacity
+        onPress={() =>
+          navigate(`${Screens.Category}`, {
+            id: category.id,
+            title: category.name,
+          })
+        }>
+        <View>
+          <Text>{category.name || 'Test'}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <Layout>
