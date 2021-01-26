@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Card} from '../interfaces/card';
+import DefaultText from './common/default-text';
 
 const CreditCard: FC<{card: Card}> = ({card}) => {
   return (
-    <View style={styles.creditCard}>
-      <Text>
-        {`${card.issuer}`} {card.name}
-      </Text>
+    <View style={styles.cardContainer}>
+      <DefaultText>{`${card.issuer}`}</DefaultText>
+      <DefaultText>{card.name}</DefaultText>
     </View>
   );
 };
@@ -15,10 +15,12 @@ const CreditCard: FC<{card: Card}> = ({card}) => {
 export default CreditCard;
 
 const styles = StyleSheet.create({
-  creditCard: {
-    width: 100,
-    height: 50,
+  cardContainer: {
+    width: '85%',
+    height: 200,
     backgroundColor: 'yellow',
-    marginVertical: 5,
+    borderRadius: 15,
+    padding: 35,
+    marginVertical: 15,
   },
 });

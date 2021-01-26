@@ -2,9 +2,10 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from './src/components/shared/icon';
-import SearchScreen from './src/screens/search';
+import ManageScreen from './src/screens/manage';
 import CategoryListStackScreen from './src/screens/category-list';
 import Screens from './src/screens';
+import CardListScreen from './src/screens/card-list';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,30 +21,29 @@ const App = () => {
           name={`${Screens.Home}`}
           component={CategoryListStackScreen}
           options={{
-            title: 'Home',
-            tabBarIcon: ({focused, color, size}) => (
-              <Icon name="home" size={size} color={color} />
-            ),
-          }}
-        />
-        {/* 
-        <Tab.Screen
-          name={`${Screens.Categories}`}
-          component={CategoriesStackScreen}
-          options={{
             title: 'Categories',
             tabBarIcon: ({focused, color, size}) => (
               <Icon name="list" size={size} color={color} />
             ),
           }}
-        /> */}
+        />
+        <Tab.Screen
+          name={`${Screens.CardList}`}
+          component={CardListScreen}
+          options={{
+            title: 'Credit Cards',
+            tabBarIcon: ({focused, color, size}) => (
+              <Icon name="credit-card" size={size} color={color} />
+            ),
+          }}
+        />
         <Tab.Screen
           name={`${Screens.Search}`}
-          component={SearchScreen}
+          component={ManageScreen}
           options={{
-            title: 'Search',
+            title: 'Manage',
             tabBarIcon: ({focused, color, size}) => (
-              <Icon name="search" size={size} color={color} />
+              <Icon name="edit" size={size} color={color} />
             ),
           }}
         />
