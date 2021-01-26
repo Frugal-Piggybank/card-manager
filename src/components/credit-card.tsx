@@ -4,10 +4,18 @@ import {Card} from '../interfaces/card';
 import DefaultText from './common/default-text';
 
 const CreditCard: FC<{card: Card}> = ({card}) => {
+  console.log(card.primaryColor);
+
   return (
-    <View style={styles.cardContainer}>
-      <DefaultText>{`${card.issuer}`}</DefaultText>
-      <DefaultText>{card.name}</DefaultText>
+    <View style={[styles.cardContainer, {backgroundColor: card.primaryColor}]}>
+      <DefaultText
+        textStyles={[
+          styles.cardHeader,
+          {color: card.secondaryColor},
+        ]}>{`${card.issuer}`}</DefaultText>
+      <DefaultText textStyles={[{color: card.secondaryColor}]}>
+        {card.name}
+      </DefaultText>
     </View>
   );
 };
@@ -22,5 +30,9 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     padding: 35,
     marginVertical: 15,
+  },
+  cardHeader: {
+    fontWeight: 'bold',
+    fontSize: 30,
   },
 });
