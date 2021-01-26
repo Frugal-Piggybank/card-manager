@@ -1,7 +1,7 @@
 enum Screens {
-  MyCards = 'MyCards',
-  Categories = 'Categories',
-  Category = 'Category',
+  Home = 'Home',
+  CategoryList = 'CategoryList',
+  CategoryDetail = 'CategoryDetail',
   Search = 'Search',
 }
 

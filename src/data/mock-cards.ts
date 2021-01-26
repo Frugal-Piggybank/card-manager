@@ -1,6 +1,6 @@
 import {Issuer, Card} from './../interfaces/card';
 
-const Cards: Card[] = [
+const MockCards: Card[] = [
   {
     id: 1,
     name: 'Discover',
@@ -28,4 +28,4 @@ const Cards: Card[] = [
   },
 ];
 
-export default Cards;
+export default MockCards;

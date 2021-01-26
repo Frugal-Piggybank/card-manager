@@ -1,6 +1,6 @@
 import {Category} from '../interfaces/Category';
 
-const Categories: Category[] = [
+const MockCategories: Category[] = [
   {
     id: 1,
     name: 'Grocery',
@@ -93,4 +93,4 @@ const Categories: Category[] = [
   },
 ];
 
-export default Categories;
+export default MockCategories;

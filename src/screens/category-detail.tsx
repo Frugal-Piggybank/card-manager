@@ -1,20 +1,21 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
+import DefaultText from '../components/common/default-text';
 import CreditCard from '../components/credit-card';
-import Cards from '../data/mock-cards';
-import Categories from '../data/mock-categories';
+import Layout from '../components/shared/layout';
+import MockCards from '../data/mock-cards';
+import MockCategories from '../data/mock-categories';
 import {Card} from '../interfaces/card';
 import {Category} from '../interfaces/Category';
 
-const CategoryScreen: FC<{route: any}> = ({route}) => {
+const CategoryDetailScreen: FC<{route: any}> = ({route}) => {
   const [category, setCategory] = useState<Category>();
   const [creditCards, setCreditCards] = useState<Card[]>([]);
   const categoryId = route.params?.id;
 
   useEffect(() => {
     setCategory(
-      Categories.find((cat) => {
+      MockCategories.find((cat) => {
         return cat.id === categoryId;
       }),
     );
@@ -22,7 +23,7 @@ const CategoryScreen: FC<{route: any}> = ({route}) => {
 
   useEffect(() => {
     category?.cards.forEach((categoryCard) => {
-      const match = Cards.find((card) => {
+      const match = MockCards.find((card) => {
         return card.id === categoryCard;
       });
 
@@ -35,18 +36,18 @@ const CategoryScreen: FC<{route: any}> = ({route}) => {
   const renderCreditCard = ({item}: any) => <CreditCard card={item} />;
 
   return (
-    <View>
-      <Text>Category id: {category?.id}</Text>
-      <Text>Category name: {category?.name}</Text>
-      <Text>Category percent: {category?.percent}%</Text>
+    <Layout>
+      <DefaultText>Category id: {category?.id}</DefaultText>
+      <DefaultText>Category name: {category?.name}</DefaultText>
+      <DefaultText>Category percent: {category?.percent}%</DefaultText>
 
       <FlatList
         data={creditCards}
         renderItem={renderCreditCard}
         keyExtractor={(card) => `${card.id}`}
       />
-    </View>
+    </Layout>
   );
 };
 
-export default CategoryScreen;
+export default CategoryDetailScreen;

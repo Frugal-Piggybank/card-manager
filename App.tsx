@@ -2,9 +2,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from './src/components/shared/icon';
-import MyCardsScreen from './src/screens/my-cards';
 import SearchScreen from './src/screens/search';
-import CategoriesStackScreen from './src/screens/categories';
+import CategoryListStackScreen from './src/screens/category-list';
 import Screens from './src/screens';
 
 const Tab = createBottomTabNavigator();
@@ -18,16 +17,16 @@ const App = () => {
           inactiveTintColor: 'gray',
         }}>
         <Tab.Screen
-          name={`${Screens.MyCards}`}
-          component={MyCardsScreen}
+          name={`${Screens.Home}`}
+          component={CategoryListStackScreen}
           options={{
-            title: 'My Cards',
+            title: 'Home',
             tabBarIcon: ({focused, color, size}) => (
               <Icon name="home" size={size} color={color} />
             ),
           }}
         />
-
+        {/* 
         <Tab.Screen
           name={`${Screens.Categories}`}
           component={CategoriesStackScreen}
@@ -37,7 +36,7 @@ const App = () => {
               <Icon name="list" size={size} color={color} />
             ),
           }}
-        />
+        /> */}
         <Tab.Screen
           name={`${Screens.Search}`}
           component={SearchScreen}
