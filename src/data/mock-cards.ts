@@ -12,6 +12,7 @@ const MockCards: Card[] = [
     signUpBonus: 0,
     startDate: new Date(2017, 1, 1),
     hasForeignTransactionFee: true,
+    categories: [1, 2, 3],
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const MockCards: Card[] = [
     signUpBonus: 200,
     startDate: new Date(2020, 9, 1),
     hasForeignTransactionFee: true,
+    categories: [1, 5, 6, 7],
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const MockCards: Card[] = [
     signUpBonus: 50000,
     startDate: new Date(2018, 8, 13),
     hasForeignTransactionFee: false,
+    categories: [8, 9, 10],
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ const MockCards: Card[] = [
     signUpBonus: 50000,
     startDate: new Date(2018, 11, 12),
     hasForeignTransactionFee: true,
+    categories: [12, 13, 14, 15],
   },
   {
     id: 5,
@@ -60,6 +64,7 @@ const MockCards: Card[] = [
     signUpBonus: 0,
     startDate: new Date(2017, 1, 1),
     hasForeignTransactionFee: true,
+    categories: [16],
   },
 ];
 

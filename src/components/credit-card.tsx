@@ -4,8 +4,6 @@ import {Card} from '../interfaces/card';
 import DefaultText from './defaults/default-text';
 
 const CreditCard: FC<{card: Card}> = ({card}) => {
-  console.log(card);
-
   return (
     <View style={[styles.cardContainer, {backgroundColor: card.primaryColor}]}>
       <DefaultText
@@ -24,9 +22,7 @@ export default CreditCard;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    width: '85%',
     height: 200,
-    backgroundColor: 'yellow',
     borderRadius: 15,
     padding: 35,
     marginVertical: 15,

@@ -1,5 +1,3 @@
-// import {Category} from './Category';
-
 export interface Card {
   id: number;
   name: string;
@@ -10,7 +8,7 @@ export interface Card {
   minimumSpend: number;
   signUpBonus: number;
   startDate: Date;
-  // categories: Category[]; // TODO: Should categories be a part of cards or vice versa
+  categories: number[]; // TODO: Should categories be a part of cards or vice versa
   hasForeignTransactionFee: boolean;
   // creditLimit: number; // TODO: relevant for this application?
 }

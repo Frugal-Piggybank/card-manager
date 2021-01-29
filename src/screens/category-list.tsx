@@ -9,6 +9,8 @@ import Screens from '.';
 import CategoryDetailScreen from './category-detail';
 import DefaultText from '../components/defaults/default-text';
 
+// TODO: Implement Search Component
+
 const CategoryListStack = createStackNavigator();
 
 const CategoryListStackScreen: FC = () => {

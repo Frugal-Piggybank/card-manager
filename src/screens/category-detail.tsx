@@ -22,16 +22,12 @@ const CategoryDetailScreen: FC<{route: any}> = ({route}) => {
   }, [categoryId]);
 
   useEffect(() => {
-    category?.cards.forEach((categoryCard) => {
-      const match = MockCards.find((card) => {
-        return card.id === categoryCard;
-      });
-
-      if (match) {
-        setCreditCards((prevCards) => [...prevCards, match]);
-      }
-    });
-  }, [category]);
+    setCreditCards(
+      MockCards.filter((card) => {
+        return card.categories.includes(categoryId);
+      }),
+    );
+  }, [categoryId]);
 
   const renderCreditCard = ({item}: any) => <CreditCard card={item} />;
 
