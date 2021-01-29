@@ -31,7 +31,7 @@ const App = () => {
           name={`${Screens.CardList}`}
           component={CardListScreen}
           options={{
-            title: 'Credit Cards',
+            title: 'My Credit Cards',
             tabBarIcon: ({focused, color, size}) => (
               <Icon name="credit-card" size={size} color={color} />
             ),

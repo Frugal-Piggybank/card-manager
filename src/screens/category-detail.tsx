@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import {FlatList} from 'react-native-gesture-handler';
-import DefaultText from '../components/common/default-text';
+import DefaultText from '../components/defaults/default-text';
 import CreditCard from '../components/credit-card';
 import Layout from '../components/shared/layout';
 import MockCards from '../data/mock-cards';

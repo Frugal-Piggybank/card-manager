@@ -1,9 +1,18 @@
+// import {Category} from './Category';
+
 export interface Card {
   id: number;
   name: string;
   issuer: Issuer;
   primaryColor: string;
   secondaryColor: string;
+  annualFee: number;
+  minimumSpend: number;
+  signUpBonus: number;
+  startDate: Date;
+  // categories: Category[]; // TODO: Should categories be a part of cards or vice versa
+  hasForeignTransactionFee: boolean;
+  // creditLimit: number; // TODO: relevant for this application?
 }
 
 // export class Issuer {

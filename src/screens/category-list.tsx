@@ -7,7 +7,7 @@ import MockCategories from '../data/mock-categories';
 import {Category} from '../interfaces/Category';
 import Screens from '.';
 import CategoryDetailScreen from './category-detail';
-import DefaultText from '../components/common/default-text';
+import DefaultText from '../components/defaults/default-text';
 
 const CategoryListStack = createStackNavigator();
 

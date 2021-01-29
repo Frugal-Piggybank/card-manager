@@ -1,11 +1,19 @@
 import React, {FC} from 'react';
-import DefaultText from '../components/common/default-text';
+import {FlatList} from 'react-native-gesture-handler';
+import CreditCard from '../components/credit-card';
 import Layout from '../components/shared/layout';
+import MockCards from '../data/mock-cards';
 
 const CardListScreen: FC = () => {
+  const renderCard = ({item}: any) => <CreditCard card={item} />;
+
   return (
     <Layout>
-      <DefaultText>List of your current cards</DefaultText>
+      <FlatList
+        data={MockCards}
+        renderItem={renderCard}
+        keyExtractor={(card) => `${card.id}`}
+      />
     </Layout>
   );
 };

@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Card} from '../interfaces/card';
-import DefaultText from './common/default-text';
+import DefaultText from './defaults/default-text';
 
 const CreditCard: FC<{card: Card}> = ({card}) => {
-  console.log(card.primaryColor);
+  console.log(card);
 
   return (
     <View style={[styles.cardContainer, {backgroundColor: card.primaryColor}]}>
