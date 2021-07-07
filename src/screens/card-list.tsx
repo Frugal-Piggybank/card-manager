@@ -1,7 +1,6 @@
 import React, {FC, useCallback, useEffect, useRef, useState} from 'react';
 import {Dimensions, Text, View} from 'react-native';
 import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
-// import {createStackNavigator} from '@react-navigation/stack';
 import CreditCard from '../components/credit-card';
 import MockCards from '../data/mock-cards';
 import Screens from '.';
@@ -9,21 +8,6 @@ import Carousel, {Pagination} from 'react-native-snap-carousel';
 import MockCategories from '../data/mock-categories';
 import {Category} from '../interfaces/Category';
 import {SafeAreaView} from 'react-native-safe-area-context';
-
-// TODO: Implement carousel
-
-// const CardListStack = createStackNavigator();
-
-// const CardListStackScreen: FC = () => {
-//   return (
-//     <CardListStack.Navigator>
-//       <CardListStack.Screen
-//         name={`${Screens.CardList}`}
-//         component={CardListScreen}
-//       />
-//     </CardListStack.Navigator>
-//   );
-// };
 
 const CardListScreen: FC<{navigation: any}> = ({navigation: {navigate}}) => {
   const SLIDER_WIDTH = Dimensions.get('window').width + 30;
@@ -47,13 +31,13 @@ const CardListScreen: FC<{navigation: any}> = ({navigation: {navigate}}) => {
     [navigate],
   );
 
-  useEffect(() => {
-    setActiveCategories(
-      MockCategories.filter((cat) => {
-        return MockCards[index].categories.includes(cat.id);
-      }),
-    );
-  }, [index]);
+  // useEffect(() => {
+  //   setActiveCategories(
+  //     MockCategories.filter((cat) => {
+  //       return MockCards[index].categories.includes(cat.id);
+  //     }),
+  //   );
+  // }, [index]);
 
   return (
     <SafeAreaView>
@@ -75,11 +59,11 @@ const CardListScreen: FC<{navigation: any}> = ({navigation: {navigate}}) => {
         tappableDots={true}
       />
       <View>
-        <FlatList
+        {/* <FlatList
           data={activeCategories}
           renderItem={({item}) => <Text>{item.name}</Text>}
           keyExtractor={(cat) => `${cat.id}`}
-        />
+        /> */}
       </View>
     </SafeAreaView>
   );
