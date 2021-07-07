@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
-import {GRAPHQL_URI} from '@env';
+import Config from 'react-native-config';
 
 import Icon from './src/components/shared/icon';
 import ManageScreen from './src/screens/manage';
@@ -14,7 +14,7 @@ import CardListScreen from './src/screens/card-list';
 const Tab = createBottomTabNavigator();
 
 const client = new ApolloClient({
-  uri: GRAPHQL_URI,
+  uri: Config.GRAPHQL_URI,
 });
 
 const App: FC = () => {
