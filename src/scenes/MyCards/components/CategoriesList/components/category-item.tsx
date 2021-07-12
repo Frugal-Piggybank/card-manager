@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Category} from '../../../../../interfaces/Category';
+import {defaultStyles} from '../../../../../shared/styles/default-styles';
 
 interface CategoryItemProps {
   category: Category;
@@ -9,8 +10,8 @@ interface CategoryItemProps {
 const CategoryItem: FC<CategoryItemProps> = ({category}) => {
   return (
     <View style={styles.container}>
-      <Text>{category.name}</Text>
-      <Text>{category.percent}</Text>
+      <Text style={defaultStyles.text}>{category.name}</Text>
+      <Text style={defaultStyles.text}>{category.percent}</Text>
     </View>
   );
 };

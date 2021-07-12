@@ -1,11 +1,14 @@
 import React, {FC} from 'react';
-import DefaultText from '../components/defaults/default-text';
+import {Text} from 'react-native';
 import Layout from '../components/shared/layout';
+import {defaultStyles} from '../shared/styles/default-styles';
 
 const ManageScreen: FC = () => {
   return (
     <Layout>
-      <DefaultText>Manage your cards and categories here.</DefaultText>
+      <Text style={defaultStyles.text}>
+        Manage your cards and categories here.
+      </Text>
     </Layout>
   );
 };

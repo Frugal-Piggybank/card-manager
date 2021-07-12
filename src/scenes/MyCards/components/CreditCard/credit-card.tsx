@@ -1,19 +1,19 @@
 import React, {FC} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Card} from '../../../interfaces/card';
-import DefaultText from '../../../components/defaults/default-text';
+import {StyleSheet, Text, View} from 'react-native';
+import {Card} from '../../../../interfaces/card';
+import {defaultStyles} from '../../../../shared/styles/default-styles';
 
 const CreditCard: FC<{card: Card}> = ({card}) => {
   return (
     <View style={[styles.cardContainer, {backgroundColor: card.primaryColor}]}>
-      <DefaultText
-        textStyles={[
+      <Text
+        style={[
           styles.cardHeader,
           {color: card.secondaryColor},
-        ]}>{`${card.issuer}`}</DefaultText>
-      <DefaultText textStyles={[{color: card.secondaryColor}]}>
+        ]}>{`${card.issuer}`}</Text>
+      <Text style={[defaultStyles.text, {color: card.secondaryColor}]}>
         {card.name}
-      </DefaultText>
+      </Text>
     </View>
   );
 };

@@ -4,7 +4,7 @@ import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useQuery} from 'react-apollo';
 
-import CreditCard from './components/credit-card';
+import CreditCard from './components/CreditCard/credit-card';
 import Screens from '../../screens';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {Category} from '../../interfaces/Category';

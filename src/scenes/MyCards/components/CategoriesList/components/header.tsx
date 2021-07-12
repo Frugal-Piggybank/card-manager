@@ -1,11 +1,12 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {defaultStyles} from '../../../../../shared/styles/default-styles';
 
 const Header: FC = () => {
   return (
     <View style={styles.container}>
-      <Text>Category Name</Text>
-      <Text>Percentage</Text>
+      <Text style={defaultStyles.text}>Category Name</Text>
+      <Text style={defaultStyles.text}>Percentage</Text>
     </View>
   );
 };

@@ -7,7 +7,8 @@ import MockCategories from '../data/mock-categories';
 import {Category} from '../interfaces/Category';
 import Screens from '.';
 import CategoryDetailScreen from './category-detail';
-import DefaultText from '../components/defaults/default-text';
+import {Text} from 'react-native';
+import {defaultStyles} from '../shared/styles/default-styles';
 
 // TODO: Implement Search Component
 
@@ -44,7 +45,7 @@ const CategoryListScreen: FC<{navigation: any}> = ({
           })
         }>
         <View>
-          <DefaultText>{category.name || 'Test'}</DefaultText>
+          <Text style={defaultStyles.text}>{category.name || 'Test'}</Text>
         </View>
       </TouchableOpacity>
     );
