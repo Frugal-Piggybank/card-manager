@@ -1,5 +1,5 @@
 import React, {FC, useCallback, useEffect, useRef, useState} from 'react';
-import {Alert, Dimensions, View} from 'react-native';
+import {Dimensions, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useQuery} from 'react-apollo';
@@ -72,7 +72,11 @@ const MyCards: FC<{navigation: any}> = ({navigation: {navigate}}) => {
         <CategoriesList categories={activeCategories} />
       </View>
       <View style={styles.addButtonContainer}>
-        <AddButton onPress={() => Alert.alert('adding a category')} />
+        <AddButton
+          onPress={(): void =>
+            navigate(`${Screens.Account}`, {screen: `${Screens.AddCard}`})
+          }
+        />
       </View>
     </SafeAreaView>
   );
@@ -88,9 +92,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   addButtonContainer: {
-    // position: 'absolute',
     alignItems: 'flex-end',
     marginRight: 15,
-    // right: 5,
   },
 });

@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {View} from 'react-native';
 import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import {createStackNavigator} from '@react-navigation/stack';
-import Layout from '../components/shared/layout';
+import Layout from '@shared/components/Layout';
 import MockCategories from '../data/mock-categories';
 import {Category} from '../shared/interfaces/Category';
 import Screens from '.';

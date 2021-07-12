@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {FlatList} from 'react-native-gesture-handler';
 import CreditCard from '../scenes/MyCards/components/CreditCard/credit-card';
-import Layout from '../components/shared/layout';
+import Layout from '@shared/components/Layout';
 import MockCards from '../data/mock-cards';
 import MockCategories from '../data/mock-categories';
 import {Card} from '@shared/interfaces/card';

@@ -6,7 +6,7 @@ import {ApolloProvider} from 'react-apollo';
 import Config from 'react-native-config';
 
 import Icon from './src/shared/components/Icon/icon';
-import ManageScreen from './src/screens/manage';
+import AccountStackNavigatorScreen from '@scenes/Account';
 import CategoryListStackScreen from './src/screens/category-list';
 import Screens from './src/screens';
 import MyCards from './src/scenes/MyCards';
@@ -47,10 +47,10 @@ const App: FC = () => {
             }}
           />
           <Tab.Screen
-            name={`${Screens.Search}`}
-            component={ManageScreen}
+            name={`${Screens.Account}`}
+            component={AccountStackNavigatorScreen}
             options={{
-              title: 'Manage',
+              title: 'Account',
               tabBarIcon: ({focused, color, size}): React.ReactNode => (
                 <Icon name="edit" size={size} color={color} />
               ),
