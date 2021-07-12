@@ -4,19 +4,20 @@ import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useQuery} from 'react-apollo';
 
-import CreditCard from '../../components/credit-card';
+import CreditCard from './components/credit-card';
 import Screens from '../../screens';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {Category} from '../../interfaces/Category';
 import {CREDIT_CARDS_QUERY} from './graphql/credit-cards';
 import Loading from '../../shared/components/Loading';
 import Error from '../../shared/components/Error';
+import CategoriesList from './components/CategoriesList/categories-list';
 
 const MyCards: FC<{navigation: any}> = ({navigation: {navigate}}) => {
   const SLIDER_WIDTH = Dimensions.get('window').width + 30;
   const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
   const [index, setIndex] = useState(0);
-  const [activeCategories, setActiveCategories] = useState<Category[]>();
+  const [activeCategories, setActiveCategories] = useState<Category[]>([]);
   const carousel = useRef(null);
 
   const {loading, error, data} = useQuery(CREDIT_CARDS_QUERY);
@@ -63,13 +64,7 @@ const MyCards: FC<{navigation: any}> = ({navigation: {navigate}}) => {
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}
       />
-      <View>
-        <FlatList
-          data={activeCategories}
-          renderItem={({item}): any => <Text>{item.name}</Text>}
-          keyExtractor={(cat): string => `${cat.id}`}
-        />
-      </View>
+      <CategoriesList categories={activeCategories} />
     </SafeAreaView>
   );
 };

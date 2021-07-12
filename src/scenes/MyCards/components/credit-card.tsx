@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Card} from '../interfaces/card';
-import DefaultText from './defaults/default-text';
+import {Card} from '../../../interfaces/card';
+import DefaultText from '../../../components/defaults/default-text';
 
 const CreditCard: FC<{card: Card}> = ({card}) => {
   return (
