@@ -1,5 +1,5 @@
 import React, {FC, useCallback, useEffect, useRef, useState} from 'react';
-import {Dimensions} from 'react-native';
+import {Alert, Dimensions, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useQuery} from 'react-apollo';
@@ -12,6 +12,8 @@ import {CREDIT_CARDS_QUERY} from './graphql/credit-cards';
 import Loading from '@shared/components/Loading';
 import Error from '@shared/components/Error';
 import CategoriesList from './components/CategoriesList/categories-list';
+import AddButton from '@shared/components/AddButton';
+import {StyleSheet} from 'react-native';
 
 const MyCards: FC<{navigation: any}> = ({navigation: {navigate}}) => {
   const SLIDER_WIDTH = Dimensions.get('window').width + 30;
@@ -48,25 +50,47 @@ const MyCards: FC<{navigation: any}> = ({navigation: {navigate}}) => {
   const {creditCards} = data;
 
   return (
-    <SafeAreaView>
-      <Carousel
-        layout="default"
-        ref={carousel}
-        data={creditCards}
-        renderItem={renderCard}
-        sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH}
-        onSnapToItem={(i): void => setIndex(i)}
-      />
-      <Pagination
-        dotsLength={creditCards.length}
-        activeDotIndex={index}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-      />
-      <CategoriesList categories={activeCategories} />
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Carousel
+          layout="default"
+          ref={carousel}
+          data={creditCards}
+          renderItem={renderCard}
+          sliderWidth={SLIDER_WIDTH}
+          itemWidth={ITEM_WIDTH}
+          onSnapToItem={(i): void => setIndex(i)}
+        />
+        <Pagination
+          dotsLength={creditCards.length}
+          activeDotIndex={index}
+          inactiveDotOpacity={0.4}
+          inactiveDotScale={0.6}
+        />
+      </View>
+      <View style={styles.categoriesContainer}>
+        <CategoriesList categories={activeCategories} />
+      </View>
+      <View style={styles.addButtonContainer}>
+        <AddButton onPress={() => Alert.alert('adding a category')} />
+      </View>
     </SafeAreaView>
   );
 };
 
 export default MyCards;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  categoriesContainer: {
+    flex: 1,
+  },
+  addButtonContainer: {
+    // position: 'absolute',
+    alignItems: 'flex-end',
+    marginRight: 15,
+    // right: 5,
+  },
+});

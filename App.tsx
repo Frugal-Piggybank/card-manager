@@ -5,7 +5,7 @@ import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 import Config from 'react-native-config';
 
-import Icon from './src/components/shared/icon';
+import Icon from './src/shared/components/Icon/icon';
 import ManageScreen from './src/screens/manage';
 import CategoryListStackScreen from './src/screens/category-list';
 import Screens from './src/screens';
@@ -31,7 +31,7 @@ const App: FC = () => {
             component={CategoryListStackScreen}
             options={{
               title: 'Categories',
-              tabBarIcon: ({focused, color, size}) => (
+              tabBarIcon: ({focused, color, size}): React.ReactNode => (
                 <Icon name="list" size={size} color={color} />
               ),
             }}
@@ -41,7 +41,7 @@ const App: FC = () => {
             component={MyCards}
             options={{
               title: 'My Credit Cards',
-              tabBarIcon: ({focused, color, size}) => (
+              tabBarIcon: ({focused, color, size}): React.ReactNode => (
                 <Icon name="credit-card" size={size} color={color} />
               ),
             }}
@@ -51,7 +51,7 @@ const App: FC = () => {
             component={ManageScreen}
             options={{
               title: 'Manage',
-              tabBarIcon: ({focused, color, size}) => (
+              tabBarIcon: ({focused, color, size}): React.ReactNode => (
                 <Icon name="edit" size={size} color={color} />
               ),
             }}

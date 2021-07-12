@@ -11,7 +11,7 @@ const CategoryItem: FC<CategoryItemProps> = ({category}) => {
   return (
     <View style={styles.container}>
       <Text style={defaultStyles.text}>{category.name}</Text>
-      <Text style={defaultStyles.text}>{category.percent}</Text>
+      <Text style={defaultStyles.text}>{category.percent}%</Text>
     </View>
   );
 };

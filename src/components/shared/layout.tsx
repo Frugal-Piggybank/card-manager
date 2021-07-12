@@ -10,7 +10,6 @@ export default Layout;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'blue',
     height: '100%',
     paddingHorizontal: 25,
   },
