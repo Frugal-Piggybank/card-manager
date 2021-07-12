@@ -1,4 +1,4 @@
-import {Issuer, Card} from './../interfaces/card';
+import {Issuer, Card} from '@shared/interfaces/card';
 
 const MockCards: Card[] = [
   {

@@ -1,4 +1,4 @@
-import {Category} from '../interfaces/Category';
+import {Category} from '@shared/interfaces/Category';
 
 const MockCategories: Category[] = [
   {

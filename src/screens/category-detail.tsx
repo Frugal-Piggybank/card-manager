@@ -4,10 +4,10 @@ import CreditCard from '../scenes/MyCards/components/CreditCard/credit-card';
 import Layout from '../components/shared/layout';
 import MockCards from '../data/mock-cards';
 import MockCategories from '../data/mock-categories';
-import {Card} from '../interfaces/card';
-import {Category} from '../interfaces/Category';
+import {Card} from '@shared/interfaces/card';
+import {Category} from '@shared/interfaces/Category';
 import {Text} from 'react-native';
-import {defaultStyles} from '../shared/styles/default-styles';
+import {defaultStyles} from '@shared/styles/default-styles';
 
 const CategoryDetailScreen: FC<{route: any}> = ({route}) => {
   const [category, setCategory] = useState<Category>();

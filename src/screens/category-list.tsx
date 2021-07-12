@@ -4,11 +4,11 @@ import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import {createStackNavigator} from '@react-navigation/stack';
 import Layout from '../components/shared/layout';
 import MockCategories from '../data/mock-categories';
-import {Category} from '../interfaces/Category';
+import {Category} from '../shared/interfaces/Category';
 import Screens from '.';
 import CategoryDetailScreen from './category-detail';
 import {Text} from 'react-native';
-import {defaultStyles} from '../shared/styles/default-styles';
+import {defaultStyles} from '@shared/styles/default-styles';
 
 // TODO: Implement Search Component
 

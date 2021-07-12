@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {defaultStyles} from '../../../../../shared/styles/default-styles';
+import {defaultStyles} from '@shared/styles/default-styles';
 
 const Header: FC = () => {
   return (

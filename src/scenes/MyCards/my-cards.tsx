@@ -1,16 +1,16 @@
 import React, {FC, useCallback, useEffect, useRef, useState} from 'react';
-import {Dimensions, Text, View} from 'react-native';
-import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
+import {Dimensions} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useQuery} from 'react-apollo';
 
 import CreditCard from './components/CreditCard/credit-card';
 import Screens from '../../screens';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
-import {Category} from '../../interfaces/Category';
+import {Category} from '@shared/interfaces/Category';
 import {CREDIT_CARDS_QUERY} from './graphql/credit-cards';
-import Loading from '../../shared/components/Loading';
-import Error from '../../shared/components/Error';
+import Loading from '@shared/components/Loading';
+import Error from '@shared/components/Error';
 import CategoriesList from './components/CategoriesList/categories-list';
 
 const MyCards: FC<{navigation: any}> = ({navigation: {navigate}}) => {

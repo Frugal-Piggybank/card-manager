@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Category} from '../../../../../interfaces/Category';
-import {defaultStyles} from '../../../../../shared/styles/default-styles';
+import {Category} from '@shared/interfaces/Category';
+import {defaultStyles} from '@shared/styles/default-styles';
 
 interface CategoryItemProps {
   category: Category;

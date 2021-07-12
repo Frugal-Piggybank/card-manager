@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
-import {Category} from '../../../../interfaces/Category';
+import {FlatList, StyleSheet, View} from 'react-native';
+import {Category} from '@shared/interfaces/Category';
 import Header from './components/header';
 import CategoryItem from './components/category-item';
 
