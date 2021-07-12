@@ -6,7 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Screens from 'screens';
 import ManageCategories from './components/ManageCategories/manage-categories';
 import ManageCards from './components/ManageCards/manage-cards';
-import AddCard from './components/AddCard/add-card';
+import UpsertCard from './components/UpsertCard/upsert-card';
 
 const AccountStackNavigator = createStackNavigator();
 
@@ -19,7 +19,7 @@ const AccountStackNavigatorScreen: FC = () => {
       />
       <AccountStackNavigator.Screen
         name={`${Screens.AddCard}`}
-        component={AddCard}
+        component={UpsertCard}
       />
       <AccountStackNavigator.Screen
         name={`${Screens.ManageCards}`}
