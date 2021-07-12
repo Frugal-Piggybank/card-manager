@@ -9,7 +9,7 @@ import Icon from './src/components/shared/icon';
 import ManageScreen from './src/screens/manage';
 import CategoryListStackScreen from './src/screens/category-list';
 import Screens from './src/screens';
-import CardListScreen from './src/screens/card-list';
+import MyCards from './src/scenes/MyCards';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +38,7 @@ const App: FC = () => {
           />
           <Tab.Screen
             name={`${Screens.CardList}`}
-            component={CardListScreen}
+            component={MyCards}
             options={{
               title: 'My Credit Cards',
               tabBarIcon: ({focused, color, size}) => (

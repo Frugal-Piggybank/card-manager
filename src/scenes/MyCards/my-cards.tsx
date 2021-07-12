@@ -4,22 +4,22 @@ import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useQuery} from 'react-apollo';
 
-import CreditCard from '../components/credit-card';
-import Screens from '.';
+import CreditCard from '../../components/credit-card';
+import Screens from '../../screens';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
-import {Category} from '../interfaces/Category';
-import {CREDIT_CARDS} from '../scenes/CreditCards/graphql/credit-cards';
-import Loading from '../shared/components/Loading';
-import Error from '../shared/components/Error';
+import {Category} from '../../interfaces/Category';
+import {CREDIT_CARDS_QUERY} from './graphql/credit-cards';
+import Loading from '../../shared/components/Loading';
+import Error from '../../shared/components/Error';
 
-const CardListScreen: FC<{navigation: any}> = ({navigation: {navigate}}) => {
+const MyCards: FC<{navigation: any}> = ({navigation: {navigate}}) => {
   const SLIDER_WIDTH = Dimensions.get('window').width + 30;
   const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
   const [index, setIndex] = useState(0);
   const [activeCategories, setActiveCategories] = useState<Category[]>();
   const carousel = useRef(null);
 
-  const {loading, error, data} = useQuery(CREDIT_CARDS);
+  const {loading, error, data} = useQuery(CREDIT_CARDS_QUERY);
 
   const renderCard = useCallback(
     ({item: card}: any) => (
@@ -36,13 +36,11 @@ const CardListScreen: FC<{navigation: any}> = ({navigation: {navigate}}) => {
     [navigate],
   );
 
-  // useEffect(() => {
-  //   setActiveCategories(
-  //     MockCategories.filter((cat) => {
-  //       return MockCards[index].categories.includes(cat.id);
-  //     }),
-  //   );
-  // }, [index]);
+  useEffect(() => {
+    data?.creditCards &&
+      setActiveCategories(data.creditCards[index].categories);
+  }, [index, data]);
+
   if (loading) return <Loading />;
   if (error) return <Error />;
 
@@ -57,25 +55,23 @@ const CardListScreen: FC<{navigation: any}> = ({navigation: {navigate}}) => {
         renderItem={renderCard}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
-        onSnapToItem={(index) => setIndex(index)}
+        onSnapToItem={(i): void => setIndex(i)}
       />
       <Pagination
         dotsLength={creditCards.length}
         activeDotIndex={index}
-        carouselRef={carousel}
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}
-        tappableDots={true}
       />
       <View>
-        {/* <FlatList
+        <FlatList
           data={activeCategories}
-          renderItem={({item}) => <Text>{item.name}</Text>}
-          keyExtractor={(cat) => `${cat.id}`}
-        /> */}
+          renderItem={({item}): any => <Text>{item.name}</Text>}
+          keyExtractor={(cat): string => `${cat.id}`}
+        />
       </View>
     </SafeAreaView>
   );
 };
 
-export default CardListScreen;
+export default MyCards;
